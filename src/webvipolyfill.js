@@ -11,10 +11,15 @@ if (typeof module === 'object' && module.exports) {
     proxy = proxybrowser;
 }
 
+XHRMock.setup();
+
+// var proxyproxy = function () {
+//     var ret = proxy.apply(this, arguments);
+//     console.log('proxied a call');
+//     var ret;
+// };
+
+XHRMock.use(proxy);
 
 export default {
-    XHRMock,
-    MockRequest,
-    MockResponse,
-    proxy
 }
