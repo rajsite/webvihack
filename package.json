@@ -1,0 +1,20 @@
+{
+  "name": "webvipolyfill",
+  "version": "1.0.0",
+  "description": "A pattern for creating polyfills for WebVIs in LabVIEW NXG",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "rollup --config"
+  },
+  "repository": "github:rajsite/webvipolyfill",
+  "author": "Milan Raj (@rajsite)",
+  "license": "MIT",
+  "dependencies": {
+    "xhr-mock": "^2.0.3"
+  },
+  "devDependencies": {
+    "rollup": "^0.55.1",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-node-resolve": "^3.0.2"
+  }
+}
