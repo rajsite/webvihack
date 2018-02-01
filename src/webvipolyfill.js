@@ -1,25 +1,17 @@
-import XHRMock from 'xhr-mock/lib/XHRMock';
-import MockRequest from 'xhr-mock/lib/MockRequest';
-import MockResponse from 'xhr-mock/lib/MockResponse';
-import proxybrowser from 'xhr-mock/lib/proxy.browser';
 
+import xhookImport from 'xhook';
 
-var proxy;
-if (typeof module === 'object' && module.exports) {
-    proxy = require('xhr-mock/lib/proxy');
+// Just in-case, should update when this is resolved https://github.com/jpillora/xhook/issues/85
+var xhook;
+if (xhookImport.enable === undefined) {
+    if (xhookImport.xhook === undefined || xhookImport.xhook.enable === undefined) {
+        throw new Error('Unrecognized xhook exports');
+    } else {
+        xhook = xhookImport.xhook;
+    }
 } else {
-    proxy = proxybrowser;
+    xhook = xhookImport;
 }
-
-XHRMock.setup();
-
-// var proxyproxy = function () {
-//     var ret = proxy.apply(this, arguments);
-//     console.log('proxied a call');
-//     var ret;
-// };
-
-XHRMock.use(proxy);
 
 export default {
 }

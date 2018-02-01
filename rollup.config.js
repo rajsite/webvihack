@@ -10,9 +10,7 @@ export default {
     exports: 'default'
   },
   plugins: [
-    resolve({
-      preferBuiltins: false // Needed for the url node_module to be used instead of Node's url module
-    }),
+    resolve(),
     commonjs()
   ]
 };
