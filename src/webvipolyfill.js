@@ -1,5 +1,5 @@
 
-import xhookImport from 'xhook';
+import {xhook} from 'xhook';
 import WebVIPolyfillRegistry from './WebVIPolyfillRegistry.js';
 
 // The current protocol version
@@ -7,19 +7,6 @@ const protocolVersion = 1;
 
 // There are no valid http status codes >=600 so we abuse this range to encode webvipolyfill protocol version
 const protocolVersionAsStatusCode = protocolVersion + 600;
-
-// This pattern is defensive because of https://github.com/jpillora/xhook/issues/85
-// Should be removed when that is resolved
-let xhook;
-if (xhookImport.enable === undefined) {
-    if (xhookImport.xhook === undefined || xhookImport.xhook.enable === undefined) {
-        throw new Error('Unrecognized xhook exports');
-    } else {
-        xhook = xhookImport.xhook;
-    }
-} else {
-    xhook = xhookImport;
-}
 
 // TODO prevent global registrations and control manually
 // Synchronously set-up xhook to listen for polyfill network requests

@@ -9,12 +9,11 @@
   "repository": "github:rajsite/webvipolyfill",
   "author": "Milan Raj (@rajsite)",
   "license": "MIT",
-  "dependencies": {
-    "xhook": "^1.4.6"
-  },
+  "dependencies": {},
   "devDependencies": {
     "rollup": "^0.55.1",
     "rollup-plugin-commonjs": "^8.3.0",
-    "rollup-plugin-node-resolve": "^3.0.2"
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "xhook": "^1.4.7"
   }
 }
