@@ -19,10 +19,10 @@
         console.log(input);
     };
 
-    webvipolyfill.define([{
+    webvipolyfill.define({
         name: 'writetosystemlog',
         action: writetosystemlog
-    }]);
+    });
 
     return {};
 }));

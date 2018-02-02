@@ -1,76 +1,41 @@
 
 var WebVIPolyfillRegistry = function () {
-    this.polyfillPromises = [];
-    this.polyfillMap = undefined;
+    this._polyfillMap = new Map();
 }
 
-// Accepts an array of webvipolyfills or a promise
-WebVIPolyfillRegistry.prototype.define = function (polyfillsOrPromise) {
+// Accepts a polyfillConfig object with a name field and an action field of either a function or a Promise resolving to a function
+WebVIPolyfillRegistry.prototype.define = function (polyfillConfig) {
     var that = this;
-    if (that.polyfillMap !== undefined) {
-        throw new Error('All Polyfills already resolved, make sure to define webvipolyfills before execution');
+    if (typeof polyfillConfig !== 'object' || polyfillConfig === null) {
+        throw new Error('Expected a webvipolyfill config object, received the following: ' + polyfillConfig);
     }
 
-    var webvipolyfillsPromise = Promise.resolve(polyfillsOrPromise).then(function (polyfills) {
-        if (Array.isArray(polyfills) === false) {
-            throw new Error('Expected an array of webvipolyfill config objects, received the following:', polyfills);
-        }
-
-        polyfills.forEach(function (polyfill) {
-            if (typeof polyfill !== 'object' || polyfill === null) {
-                throw new Error('Expected a webvipolyfill config object, received the following', polyfill);
-            }
-
-            if (typeof polyfill.name !== 'string' || /^([a-z]\w*)$/.exec(polyfill.name) === null) {
-                throw new Error('Expected webvipolyfill config to be a valid string name, received the following', polyfill.name);
-            }
-
-            if (typeof polyfill.action !== 'function') {
-                throw new Error('Expected webvipolyfill config to have an action, received the following', polyfill.action);
-            }
-        });
-
-        return polyfills;
-    });
-
-    that.polyfillPromises.push(webvipolyfillsPromise);
-};
-
-WebVIPolyfillRegistry.prototype._getPolyfillAction = function (name) {
-    var that =this;
-    return that._resolveAllPolyfills().then(function (polyfillMap) {
-        var polyfill = polyfillMap.get(name);
-        if (polyfill === undefined) {
-            throw new Error('No polyfill resolved for polyfill with name: ', name);
-        }
-
-        return polyfill.action;
-    });
-};
-
-WebVIPolyfillRegistry.prototype._resolveAllPolyfills = function () {
-    var that = this;
-    if (that.polyfillMap === undefined) {
-        that.polyfillMap = Promise.all(that.polyfillPromises).then(function(listOfPolyfills) {
-            var flattenedList = listOfPolyfills.reduce(function (flattenedList, polyfills) {
-                return flattenedList.concat(polyfills);
-            }, []);
-            
-            var polyfillMap = flattenedList.reduce(function (polyfillMap, polyfill) {
-                if (polyfillMap.has(polyfill.name)) {
-                    throw new Error('Multiple polyfills registered with name: ', polyfill.name);
-                }
-
-                polyfillMap.set(polyfill.name, polyfill);
-                return polyfillMap;
-            }, new Map());
-
-            that.polyfillPromises = undefined;
-            return polyfillMap;
-        });
+    if (typeof polyfillConfig.name !== 'string' || /^([a-z]\w*)$/.exec(polyfillConfig.name) === null) {
+        throw new Error('Expected webvipolyfill config to be a valid string name, received the following: ' + polyfillConfig.name);
     }
 
-    return that.polyfillMap;
+    if (that._polyfillMap.has(polyfillConfig.name)) {
+        throw new Error('A polyfill with the following name has already been registered: ' + polyfillConfig.name);
+    }
+
+    var polyfillActionPromise = Promise.resolve(polyfillConfig.action).then(function (polyfillAction) {
+        if (typeof polyfillAction !== 'function') {
+            throw new Error('Expected webvipolyfill config to have an action, received config with name: ' + polyfillConfig.name + ' and action: ' + polyfillAction);
+        }
+
+        return polyfillAction;
+    });
+
+    that._polyfillMap.set(polyfillConfig.name, polyfillActionPromise);
+};
+
+WebVIPolyfillRegistry.prototype._getPolyfillActionPromise = function (name) {
+    var polyfillActionPromise = this._polyfillMap.get(name);
+    if (polyfillActionPromise === undefined) {
+        throw new Error('No polyfill resolved for polyfill with name: ', name);
+    }
+
+    return polyfillActionPromise;
 };
 
 export default WebVIPolyfillRegistry;

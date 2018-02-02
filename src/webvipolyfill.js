@@ -35,8 +35,8 @@ xhook.before(function (request, callback) {
     }
 
     var name = matches[1];
-    webvipolyfill._getPolyfillAction(name).then(function (action) {
-        var result = action(request.body);
+    webvipolyfill._getPolyfillActionPromise(name).then(function (polyfillAction) {
+        var result = polyfillAction(request.body);
         callback({
             status: 200,
             statusText: 'OK',
