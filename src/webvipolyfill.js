@@ -24,6 +24,7 @@ var webvipolyfill = new WebVIPolyfillRegistry();
 xhook.before(function (request, callback) {
     // Delegate to the native request if not a webvipolyfill request
     if (request.url.indexOf('webvipolyfill:') !== 0) {
+        callback();
         return;
     }
 
@@ -31,17 +32,22 @@ xhook.before(function (request, callback) {
     var matches = /^webvipolyfill:([a-z]\w*)$/.exec(request.url);
     if (matches === null) {
         // TODO make an error response instead
+        callback();
         return;
     }
 
     var name = matches[1];
     webvipolyfill._getPolyfillActionPromise(name).then(function (polyfillAction) {
-        var result = polyfillAction(request.body);
-        callback({
-            status: 200,
-            statusText: 'OK',
-            data: result
+        var reader = new FileReader();
+        reader.addEventListener('loadend', function () {
+            var result = polyfillAction(reader.result);
+            callback({
+                status: 200,
+                statusText: 'OK',
+                data: new ArrayBuffer(0)
+            });
         });
+        reader.readAsText(request.body);
     });
 });
 

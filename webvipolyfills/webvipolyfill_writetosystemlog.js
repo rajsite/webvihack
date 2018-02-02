@@ -11,7 +11,8 @@
     } else if (typeof module === 'object' && module.exports) {
         module.exports = factory(require('webvipolyfill'));
     } else {
-        root.returnExports = factory(root.webvipolyfill);
+        // MAKE SURE TO UPDATE THE root.NAME IF MODIFYING TO PREVENT COLLISIONS
+        root.webvipolyfill_writetosystemlog = factory(root.webvipolyfill);
     }
 }(typeof self !== 'undefined' ? self : this, function (webvipolyfill) {
 
