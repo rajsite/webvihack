@@ -1,0 +1,9 @@
+dist: trusty
+sudo: false
+language: node_js
+node_js:
+- lts/*
+before_install:
+- nvm ls
+- node -v
+- npm -v

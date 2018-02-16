@@ -4,7 +4,7 @@
   "description": "A pattern for creating polyfills for WebVIs in LabVIEW NXG",
   "scripts": {
     "lint": "eslint .",
-    "test": "npm run lint",
+    "test": "npm run lint && npm run build",
     "build": "rollup --config"
   },
   "repository": "github:rajsite/webvipolyfill",
