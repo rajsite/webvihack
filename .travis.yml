@@ -7,3 +7,11 @@ before_install:
 - nvm ls
 - node -v
 - npm -v
+deploy:
+  provider: npm
+  email: rajsite@gmail.com
+  api_key:
+    secure: NW8vmqXSbhvI06WIjZQoZvnetPN7Rxw6KgHSui4rCNNow/pYZPlO4XQXHkN92uRKQe4WEd4fZLfAE6w8iwzCMydvXfAl3E2NG73VW7NEQ8S1HDtZVtw53g49IjCEHSrwruzBslCoC/ohYJXqGIXr7WzhdDqn2qBp1nMJ7tHa4ieLCiBJEM2kKjFl78kEy+uV6+mnLizlWFNNBcLfkL9tHxTyIUlURQZqeKaJaTrOVRpx7yqUj9E5bBs/kor1/NlMLSPAB1vw/DF1sfSgwQgkWKSAtz3UL4fkdxahU6urgHMxGZ6qGXvYXl2TzuAJyr+pf6BI8jJcyOEYAgKQd5+ZFGeYHUwCau3untz+rfK4ypbcXj68cI2qav5fZbwTplqfRE95hRYl6yODCOoNjFaev1Nj1/7mJgv9p/SvTc3m75cayAtURR1TqMF2D+s8B06Z9/VyFORhrdCgcmEwtTx2V5ipJTETqkSAbTQLtWzPoKe0pDmvQ2wO3wuSwVpJPt7qYAjSH5Yf92WPVRVcCKK4Sf72iMQZMUd2/rFEHFe4eLLdIoB5mqfnw/KN9X0O0YBQLK1Plj6hYfwgRkpTQDn/JUeekNetnkztNik7UjfaVnOEFKYQ9/uoOEICEqRXeWuNJtoq8E7tSgDCKp9A543jql9NkiiLLQEZ4VG0Bo93tLA=
+  on:
+    tags: true
+    repo: rajsite/webvipolyfill
