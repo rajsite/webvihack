@@ -1,4 +1,6 @@
 
+import polyfillNameSyntax from './polyfillNameSyntax.js';
+
 var WebVIPolyfillRegistry = function () {
     this._polyfillMap = new Map();
 }
@@ -10,7 +12,7 @@ WebVIPolyfillRegistry.prototype.define = function (polyfillConfig) {
         throw new Error('Expected a webvipolyfill config object, received the following: ' + polyfillConfig);
     }
 
-    if (typeof polyfillConfig.name !== 'string' || /^([a-z]\w*)$/.exec(polyfillConfig.name) === null) {
+    if (typeof polyfillConfig.name !== 'string' || polyfillNameSyntax.test(polyfillConfig.name) === false) {
         throw new Error('Expected webvipolyfill config to be a valid string name, received the following: ' + polyfillConfig.name);
     }
 

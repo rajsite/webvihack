@@ -17,6 +17,7 @@
 }(typeof self !== 'undefined' ? self : this, function (webvipolyfill) {
 
     var writetosystemlog = function (input) {
+        // eslint-disable-next-line no-console
         console.log(input);
     };
 

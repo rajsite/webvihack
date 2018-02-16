@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "A pattern for creating polyfills for WebVIs in LabVIEW NXG",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "test": "npm run lint",
     "build": "rollup --config"
   },
   "repository": "github:rajsite/webvipolyfill",
@@ -11,6 +12,8 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "eslint": "^4.17.0",
+    "promise-file-reader": "github:rajsite/promise-file-reader",
     "rollup": "^0.55.1",
     "rollup-plugin-commonjs": "^8.3.0",
     "rollup-plugin-node-resolve": "^3.0.2",
