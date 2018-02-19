@@ -4,9 +4,10 @@
   "description": "A pattern for creating polyfills for WebVIs in LabVIEW NXG",
   "scripts": {
     "lint": "eslint .",
-    "test": "npm run lint && npm run test-jasmine",
+    "test": "npm run lint && npm run test-jasmine && npm run test-karma",
     "build": "rollup --config",
-    "test-jasmine": "jasmine"
+    "test-jasmine": "jasmine",
+    "test-karma": "karma start"
   },
   "main": "dist/webvipolyfill.concat.js",
   "repository": "github:rajsite/webvipolyfill",
