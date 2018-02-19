@@ -56,7 +56,15 @@
 
             // start these browsers
             // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-            browsers: ['ChromeHeadless'],
+            browsers: ['ChromeHeadlessNoSandbox'],
+
+            // custom browser configurations
+            customLaunchers: {
+                ChromeHeadlessNoSandbox: {
+                    base: 'ChromeHeadless',
+                    flags: ['--no-sandbox']
+                }
+            },
 
             // Hostname to be used when capturing browsers.
             // This seems to reduce intermittent hangs on Windows 7 using IE 11
