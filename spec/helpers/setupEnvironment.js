@@ -19,14 +19,16 @@
             commonjsGlobal.Blob = Blob;
             commonjsGlobal.TextEncoder = require('util').TextEncoder;
             commonjsGlobal.TextDecoder = require('util').TextDecoder;
-            require('../../dist/webvipolyfill.concat.js');
-            require('../../webvipolyfills/webvipolyfill_writetosystemlog.js');
+
             commonjsGlobal.Vireo = require('vireo');
             commonjsGlobal.rebootAndLoadVia = require('../support/rebootAndLoadVia.js');
+            require('../../dist/webvipolyfill.concat.js');
+            require('../../webvipolyfills/webvipolyfill_writetosystemlog.js');
         } else {
-            // webvipolyflll should ready be loaded to window.webvipolyfill
             commonjsGlobal.Vireo = window.NationalInstruments.Vireo.Vireo;
             // rebootAndLoadVia should already be loaded to window.rebootAndLoadVia
+            // webvipolyflll should ready be loaded to window.webvipolyfill
+            // webvipolyfills already loaded
         }
 
     });
