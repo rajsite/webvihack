@@ -1,5 +1,13 @@
 dist: trusty
 sudo: false
+addons:
+  apt:
+    packages:
+      # This is required to run new chrome on old trusty
+      - libnss3
+cache:
+  directories:
+    - node_modules
 language: node_js
 node_js:
 - lts/*
