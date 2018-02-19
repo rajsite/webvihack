@@ -1,4 +1,3 @@
-
 import polyfillNameSyntax from './polyfillNameSyntax.js';
 import {readAsText} from 'promise-file-reader';
 import {xhook} from 'xhook';
@@ -7,9 +6,17 @@ import WebVIPolyfillRegistry from './WebVIPolyfillRegistry.js';
 // The webvipolyfill url scheme
 var scheme = 'webvipolyfill';
 var protocol = scheme + ':';
-
 var webvipolyfillRegistry = new WebVIPolyfillRegistry();
 var encoder = new TextEncoder();
+var decoder = new TextDecoder();
+
+var requestDataAsString = function (data) {
+    if (data instanceof Uint8Array) {
+        return Promise.resolve(decoder.decode(data));
+    } else {
+        return readAsText(data);
+    }
+};
 
 // TODO block all hooks on registry loading, works since all requests are async by default
 xhook.before(function (request, callback) {
@@ -32,7 +39,7 @@ xhook.before(function (request, callback) {
 
     var name = matches[1];
     webvipolyfillRegistry._getPolyfillActionPromise(name).then(function (polyfillAction) {
-        readAsText(request.body).then(function(body) {
+        requestDataAsString(request.body).then(function(body) {
             var result = polyfillAction(body);
             var resultArrayBuffer = encoder.encode(result);
             callback({

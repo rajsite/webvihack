@@ -4,8 +4,9 @@
   "description": "A pattern for creating polyfills for WebVIs in LabVIEW NXG",
   "scripts": {
     "lint": "eslint .",
-    "test": "npm run lint",
-    "build": "rollup --config"
+    "test": "npm run lint && npm run test-jasmine",
+    "build": "rollup --config",
+    "test-jasmine": "jasmine"
   },
   "main": "dist/webvipolyfill.concat.js",
   "repository": "github:rajsite/webvipolyfill",
@@ -14,10 +15,13 @@
   "dependencies": {},
   "devDependencies": {
     "eslint": "^4.17.0",
-    "promise-file-reader": "github:rajsite/promise-file-reader",
+    "jasmine": "^3.0.0",
+    "promise-file-reader": "^1.0.1",
     "rollup": "^0.55.1",
     "rollup-plugin-commonjs": "^8.3.0",
     "rollup-plugin-node-resolve": "^3.0.2",
-    "xhook": "^1.4.7"
+    "vireo": "^6.1.4",
+    "xhook": "^1.4.7",
+    "xhr2": "^0.1.4"
   }
 }
