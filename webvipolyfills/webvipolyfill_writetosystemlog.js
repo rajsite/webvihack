@@ -9,10 +9,9 @@
     if (typeof define === 'function' && define.amd) {
         define(['webvipolyfill'], factory);
     } else if (typeof module === 'object' && module.exports) {
-        module.exports = factory(require('webvipolyfill'));
+        factory(require('../'));
     } else {
-        // MAKE SURE TO UPDATE THE root.NAME IF MODIFYING TO PREVENT COLLISIONS
-        root.webvipolyfill_writetosystemlog = factory(root.webvipolyfill);
+        factory(root.webvipolyfill);
     }
 }(typeof self !== 'undefined' ? self : this, function (webvipolyfill) {
 

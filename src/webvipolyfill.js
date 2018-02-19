@@ -6,7 +6,7 @@ import WebVIPolyfillRegistry from './WebVIPolyfillRegistry.js';
 // The webvipolyfill url scheme
 var scheme = 'webvipolyfill';
 var protocol = scheme + ':';
-var webvipolyfillRegistry = new WebVIPolyfillRegistry();
+var webvipolyfill = new WebVIPolyfillRegistry();
 var encoder = new TextEncoder();
 var decoder = new TextDecoder();
 
@@ -38,7 +38,7 @@ xhook.before(function (request, callback) {
     }
 
     var name = matches[1];
-    webvipolyfillRegistry._getPolyfillActionPromise(name).then(function (polyfillAction) {
+    webvipolyfill._getPolyfillActionPromise(name).then(function (polyfillAction) {
         requestDataAsString(request.body).then(function(body) {
             var result = polyfillAction(body);
             var resultArrayBuffer = encoder.encode(result);
@@ -51,12 +51,5 @@ xhook.before(function (request, callback) {
     });
 });
 
-// Export in browser and workers
-if (typeof window !== 'undefined') {
-    window.webvipolyfill = webvipolyfillRegistry;
-} else if (typeof self !== 'undefined') {
-    self.webvipolyfill = webvipolyfillRegistry;
-}
-
 // Export in node
-export default webvipolyfillRegistry;
+export default webvipolyfill;

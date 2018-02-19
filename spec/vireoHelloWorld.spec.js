@@ -27,10 +27,7 @@ describe('Verify Vireo can be loaded', function () {
             define(MyVI dv(VirtualInstrument (
                 Locals: c(
                     e(dv(.UInt32 0) handle)
-                    e('http://httpbin.org/post' url)
-                    e('' outputFile)
                     e('test=helloworldhttppostfromvireo' buffer)
-                    e(10000 timeout)
                     e('' headers)
                     e('' body)
                     e(dv(.UInt32 0) statusCode)
@@ -46,9 +43,7 @@ describe('Verify Vireo can be loaded', function () {
                     ) clusterRepresentation)
                 )
                 clump (
-                    HttpClientPost(handle url outputFile buffer timeout headers body statusCode error)
-
-                    // string lvtype pathIntoJSON lvExtensionsBool strictValidationBool defaultNullBool errorCluster
+                    HttpClientPost(handle 'http://httpbin.org/post' '' buffer -1 headers body statusCode error)
                     UnflattenFromJSON(body clusterRepresentation * false false false error)
                     Println(clusterRepresentation.form.test)
                     Println(error.status)
