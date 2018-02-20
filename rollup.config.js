@@ -2,7 +2,7 @@ import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
 
 export default {
-    input: 'src/webvipolyfill.js',
+    input: 'js/webvipolyfill.js',
     output: {
         file: 'dist/webvipolyfill.concat.js',
         format: 'umd',
