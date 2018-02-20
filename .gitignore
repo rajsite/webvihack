@@ -57,6 +57,9 @@ typings/
 # dotenv environment variables file
 .env
 
-## WebVI polyfill specific
-/dist
+# Ignore LabVIEW cache files
+*cache
+
+# WebVI polyfill specific
+webvipolyfill.gcomp/*.js
 .vscode

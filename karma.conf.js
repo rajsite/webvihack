@@ -24,7 +24,7 @@
                 'spec/support/*.js',
 
                 // test assets
-                'dist/webvipolyfill.concat.js',
+                'webvipolyfill.gcomp/webvipolyfill.js',
                 'webvipolyfills/webvipolyfill_writetosystemlog.js',
                 'spec/helpers/*.js',
 
