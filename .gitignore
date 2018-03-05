@@ -59,7 +59,10 @@ typings/
 
 # Ignore LabVIEW cache files
 *cache
+*.lvcompile
 
 # WebVI polyfill specific
 webvipolyfill_resources
 .vscode
+Builds/**/*.*
+!Builds/**/*.via.txt

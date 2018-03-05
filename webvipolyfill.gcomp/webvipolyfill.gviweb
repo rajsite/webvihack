@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="6D1021E91C79A13C67B08521E850F8C4" Timestamp="1D3AA0E711E0A55" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="90F934567E77301A739800FAD232821A" Timestamp="1D3B427D53843BB" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="5.2.0.58310" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="5.2.0.49153" Version="5.2.0.49153" />
 		<ParsableNamespace AssemblyFileVersion="5.2.0.58310" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="5.2.0.9" Version="5.2.0.49152" />
@@ -94,15 +94,14 @@
 				<Terminal DataType="String" Direction="Output" Hotspot="40 25" Id="R2" xmlns="http://www.ni.com/PlatformFramework" />
 				<Terminal DataType="Error" Direction="Output" Hotspot="40 35" Id="R3" xmlns="http://www.ni.com/PlatformFramework" />
 			</MethodCall>
-			<Literal Bounds="390 322 12 9" DataType="Int32" Id="54" Label="55" xmlns="http://www.ni.com/MocCommon">
+			<Literal Bounds="320 335 40 15" DataType="Int32" Id="54" Label="55" xmlns="http://www.ni.com/MocCommon">
 				<p.Data>-1</p.Data>
 				<NumericBehavior Interpretation="Exact" RadixVisibility="Hidden" ValueFormatter="LV:0" />
-				<DockedConstantFacade UndockedSize="40 15" />
 			</Literal>
-			<NodeLabel AttachedTo="54" Bounds="390 304 30 15" Id="55" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+			<NodeLabel AttachedTo="54" Bounds="272 335 43 14" Id="55" xmlns="http://www.ni.com/PlatformFramework">
 				<p.Text>timeout</p.Text>
 			</NodeLabel>
-			<Wire Facade="WireInvisibleFacade" Id="56" Joints="N(54:Out)|(402,327) v(-17) N(53:B0)|(395,310)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="56" Joints="N(54:Out)|(360,340) h(35) N(53:B0)|(395,310)" xmlns="http://www.ni.com/PlatformFramework" />
 			<Literal Bounds="200 250 100 15" DataType="String" Id="63" xmlns="http://www.ni.com/MocCommon">
 				<p.Data>webvipolyfill:</p.Data>
 				<StringBehavior TextDisplayMode="Default" />
@@ -142,7 +141,7 @@
 			</HtmlCluster>
 			<HtmlLabel Height="[float]16" Id="51" LabelOwner="[UIModel]44" Left="[float]436" Text="[string]error out" Top="[float]480" Width="[float]54" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
 		</HtmlFrontPanel>
-		<DataItem AdaptToDiagramType="True" CallDirection="Input" CallIndex="0" DataType="String" Id="16" Name="action" xmlns="http://www.ni.com/MocCommon">
+		<DataItem AdaptToDiagramType="True" CallDirection="Input" CallIndex="0" CallUsage="Required" DataType="String" Id="16" Name="action" xmlns="http://www.ni.com/MocCommon">
 			<p.DefaultValue>""</p.DefaultValue>
 		</DataItem>
 		<DataItem AdaptToDiagramType="True" CallDirection="Input" CallIndex="1" DataType="String" Id="21" Name="input" xmlns="http://www.ni.com/MocCommon">

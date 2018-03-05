@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="A72D70F6AB334CD428EB98ED511A4020" Timestamp="1D3AA0D04D431BC" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="175791B05196A162AB0731E693F744D3" Timestamp="1D3B4278A6E4BDB" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="5.2.0.58310" FeatureSetName="GComponentFeatureSet" Name="http://www.ni.com/GComponent.xsd" OldestCompatibleVersion="5.2.0.0" Version="5.2.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="5.2.0.58310" FeatureSetName="Web Module: WebVI" Name="http://www.ni.com/NationalInstruments.LabVIEW.HtmlVI" OldestCompatibleVersion="5.2.0.0" Version="5.2.0.49152" />
@@ -23,7 +23,7 @@
 		<EmbeddedDefinitionReference Id="8" ModelDefinitionType="{http://www.ni.com/GComponent.xsd}ComponentDefinitionEnvoyHierarchyRoot" Name="Global\ namespace">
 			<ComponentDefinitionEnvoyHierarchyRoot xmlns="http://www.ni.com/GComponent.xsd" />
 			<NameScopingEnvoy AutomaticallyResolveUp="True" Id="13" Name="webvipolyfill">
-				<SourceFileReference Id="14" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="JavaScriptInvoke\.gviweb" OverridingModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.HTMLVirtualInstrument" StoragePath="JavaScriptInvoke.gviweb" />
+				<SourceFileReference Id="14" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="webvipolyfill\.gviweb" OverridingModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.HTMLVirtualInstrument" StoragePath="webvipolyfill.gviweb" />
 			</NameScopingEnvoy>
 		</EmbeddedDefinitionReference>
 		<NameScopingEnvoy Id="9" ModelDefinitionType="{http://www.ni.com/GComponent.xsd}ComponentDefinitionContentReferenceRoot" Name="webvipolyfill\.gcomp" NameTracksFileName="True">
