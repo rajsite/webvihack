@@ -34,7 +34,7 @@ WebVIPolyfillRegistry.prototype.define = function (polyfillConfig) {
 WebVIPolyfillRegistry.prototype._getPolyfillActionPromise = function (name) {
     var polyfillActionPromise = this._polyfillMap.get(name);
     if (polyfillActionPromise === undefined) {
-        throw new Error('No polyfill resolved for polyfill with name: ', name);
+        throw new Error('No polyfill resolved for polyfill with name: ' + name);
     }
 
     return polyfillActionPromise;
