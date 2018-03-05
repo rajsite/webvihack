@@ -22,7 +22,7 @@
 
             commonjsGlobal.Vireo = require('vireo');
             commonjsGlobal.rebootAndLoadVia = require('../support/rebootAndLoadVia.js');
-            require('../../webvipolyfill.gcomp/webvipolyfill.js');
+            require('../../webvipolyfill_resources/webvipolyfill.js');
             require('../../webvipolyfills/webvipolyfill_writetosystemlog.js');
         } else {
             commonjsGlobal.Vireo = window.NationalInstruments.Vireo.Vireo;

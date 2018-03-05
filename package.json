@@ -9,7 +9,7 @@
     "test-jasmine": "jasmine",
     "test-karma": "karma start"
   },
-  "main": "webvipolyfill.gcomp/webvipolyfill.js",
+  "main": "webvipolyfill_resources/webvipolyfill.js",
   "repository": "github:rajsite/webvipolyfill",
   "author": "Milan Raj (@rajsite)",
   "license": "MIT",

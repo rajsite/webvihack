@@ -61,5 +61,5 @@ typings/
 *cache
 
 # WebVI polyfill specific
-webvipolyfill.gcomp/*.js
+webvipolyfill_resources
 .vscode
