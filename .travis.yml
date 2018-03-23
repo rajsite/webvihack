@@ -16,6 +16,7 @@ before_script:
 - tar -tf $WEBVIPOLYFILL_PACKAGE_NAME
 - tar -xzOf $WEBVIPOLYFILL_PACKAGE_NAME | zip "${$WEBVIPOLYFILL_PACKAGE_NAME}.zip" $(tar -tf $WEBVIPOLYFILL_PACKAGE_NAME)
 - ls -al
+- zipinfo -1 "${$WEBVIPOLYFILL_PACKAGE_NAME}.zip"
 deploy:
   provider: npm
   skip_cleanup: true
