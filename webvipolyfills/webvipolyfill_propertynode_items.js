@@ -3,7 +3,7 @@
     'use strict';
     var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
-    var webvipolyfill_itemspropertynode = function (input) {
+    var webvipolyfill_propertynode_items = function (input) {
         var config = JSON.parse(input);
         var controlSelector = config['ring in'];
         var element = document.querySelector(controlSelector);
@@ -18,5 +18,5 @@
         element.items = formattedItemsJSON;
     };
 
-    commonjsGlobal.webvipolyfill_itemspropertynode = webvipolyfill_itemspropertynode;
+    commonjsGlobal.webvipolyfill_propertynode_items = webvipolyfill_propertynode_items;
 }());

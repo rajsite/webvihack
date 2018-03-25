@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "npm run lint && npm run test-jasmine && npm run test-karma",
-    "build": "rollup --config",
+    "build": "rollup --config && copy webvipolyfills\\* webvipolyfill_resources",
     "test-jasmine": "jasmine",
     "test-karma": "karma start --browsers ChromeHeadlessNoSandbox",
     "test-karma-manual": "karma start --no-single-run"
@@ -16,6 +16,7 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
+    "copy": "^0.3.1",
     "eslint": "^4.17.0",
     "jasmine": "^3.0.0",
     "karma": "^2.0.0",
