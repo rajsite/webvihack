@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "npm run lint && npm run test-jasmine && npm run test-karma",
-    "build": "rollup --config && cpx \"webvipolyfills/*\" webvipolyfill_resources",
+    "build": "rollup --config && cpx \"source/webvipolyfill_*\" webvipolyfill_resources",
     "test-jasmine": "jasmine",
     "test-karma": "karma start --browsers ChromeHeadlessNoSandbox",
     "test-karma-manual": "karma start --no-single-run"
