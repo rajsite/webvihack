@@ -25,7 +25,7 @@ describe('Verifies the Write to System Log VI webvipolyfill', function () {
                     ) clusterRepresentation)
                 )
                 clump (
-                    HttpClientPost(handle 'webvipolyfill:writetosystemlog' '' buffer -1 headers body statusCode error)
+                    HttpClientPost(handle 'webvipolyfill:webvipolyfill_writetosystemlog' '' buffer -1 headers body statusCode error)
                     Println(body)
                     Println(error.status)
                 )

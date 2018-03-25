@@ -5,25 +5,14 @@
 // severity 1 -> console.warn
 // severity 2 -> console.info (modern browsers, ie chrome, filter info messages by default)
 
-(function (root, factory) {
-    if (typeof define === 'function' && define.amd) {
-        define(['webvipolyfill'], factory);
-    } else if (typeof module === 'object' && module.exports) {
-        factory(require('../'));
-    } else {
-        factory(root.webvipolyfill);
-    }
-}(typeof self !== 'undefined' ? self : this, function (webvipolyfill) {
+(function () {
+    'use strict';
+    var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
-    var writetosystemlog = function (input) {
+    var webvipolyfill_writetosystemlog = function (input) {
         // eslint-disable-next-line no-console
         console.log(input);
     };
 
-    webvipolyfill.define({
-        name: 'writetosystemlog',
-        action: writetosystemlog
-    });
-
-    return {};
-}));
+    commonjsGlobal.webvipolyfill_writetosystemlog = webvipolyfill_writetosystemlog;
+}());

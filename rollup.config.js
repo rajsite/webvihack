@@ -6,8 +6,7 @@ export default {
     output: {
         file: 'webvipolyfill_resources/webvipolyfill.js',
         format: 'umd',
-        name: 'webvipolyfill',
-        exports: 'default'
+        name: 'webvipolyfill'
     },
     plugins: [
         resolve(),

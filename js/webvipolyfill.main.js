@@ -1,16 +1,14 @@
-import polyfillNameSyntax from './polyfillNameSyntax.js';
 import {readAsText} from 'promise-file-reader';
 import {xhook} from 'xhook';
-import WebVIPolyfillRegistry from './WebVIPolyfillRegistry.js';
 
-// The webvipolyfill url scheme
+var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 var scheme = 'webvipolyfill';
 var protocol = scheme + ':';
-var webvipolyfill = new WebVIPolyfillRegistry();
 var encoder = new TextEncoder();
 var decoder = new TextDecoder();
 
 var requestDataAsString = function (data) {
+    // node environment uses UInt8Array while browser uses Blob
     if (data instanceof Uint8Array) {
         return Promise.resolve(decoder.decode(data));
     } else {
@@ -29,16 +27,15 @@ xhook.before(function (request, callback) {
     // Verify that a POST method was used or error
 
     // Find the name of the polyfill to use
-    var possibleName = request.url.substring(protocol.length);
-    var matches = polyfillNameSyntax.exec(possibleName);
-    if (matches === null) {
-        // TODO make an error response instead
+    var name = request.url.substring(protocol.length);
+    var polyfillAction = commonjsGlobal[name];
+    if (typeof polyfillAction !== 'function') {
+        // TODO return an error instead
         callback();
         return;
     }
 
-    var name = matches[1];
-    webvipolyfill._getPolyfillActionPromise(name).then(function (polyfillAction) {
+    Promise.resolve(polyfillAction).then(function (polyfillAction) {
         requestDataAsString(request.body).then(function(body) {
             var result = polyfillAction(body);
             var resultArrayBuffer = encoder.encode(result);
@@ -50,6 +47,3 @@ xhook.before(function (request, callback) {
         });
     });
 });
-
-// Export in node
-export default webvipolyfill;
