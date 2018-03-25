@@ -24,6 +24,10 @@
                 'spec/support/*.js',
 
                 // test assets
+                {
+                    pattern: 'Builds/**/*.via.txt',
+                    included: false
+                },
                 'webvipolyfill_resources/webvipolyfill.js',
                 'webvipolyfills/webvipolyfill_writetosystemlog.js',
                 'spec/helpers/*.js',
@@ -56,7 +60,7 @@
 
             // start these browsers
             // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-            browsers: ['ChromeHeadlessNoSandbox'],
+            browsers: [],
 
             // custom browser configurations
             customLaunchers: {
