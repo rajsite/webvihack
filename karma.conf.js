@@ -28,8 +28,7 @@
                     pattern: 'Builds/**/*.via.txt',
                     included: false
                 },
-                'webvipolyfill_resources/webvipolyfill.js',
-                'webvipolyfills/webvipolyfill_writetosystemlog.js',
+                'webvipolyfill_resources/*.js',
                 'spec/helpers/*.js',
 
                 // test specs

@@ -23,7 +23,7 @@
             commonjsGlobal.Vireo = require('vireo');
             commonjsGlobal.rebootAndLoadVia = require('../support/rebootAndLoadVia.js');
             require('../../webvipolyfill_resources/webvipolyfill.js');
-            require('../../webvipolyfills/webvipolyfill_writetosystemlog.js');
+            require('../../webvipolyfill_resources/webvipolyfill_writetosystemlog.js');
         } else {
             commonjsGlobal.Vireo = window.NationalInstruments.Vireo.Vireo;
             // rebootAndLoadVia should already be loaded to window.rebootAndLoadVia
