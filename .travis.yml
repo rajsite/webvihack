@@ -13,6 +13,15 @@ before_install:
 before_script:
 - npm run build
 - tar -tf $(npm pack)
+# Convert the tgz created by npm pack to a zip for release
+- rm -rf webvipolyfill_temp_out
+- mkdir webvipolyfill_temp_out
+- tar xzf *.tgz -C webvipolyfill_temp_out
+- cd webvipolyfill_temp_out/package/
+- zip -r ../../webvipolyfill.zip .
+- cd ../../
+- zipinfo -1 webvipolyfill.zip
+- rm -rf webvipolyfill_temp_out
 deploy:
   provider: npm
   skip_cleanup: true
@@ -21,4 +30,12 @@ deploy:
     secure: NW8vmqXSbhvI06WIjZQoZvnetPN7Rxw6KgHSui4rCNNow/pYZPlO4XQXHkN92uRKQe4WEd4fZLfAE6w8iwzCMydvXfAl3E2NG73VW7NEQ8S1HDtZVtw53g49IjCEHSrwruzBslCoC/ohYJXqGIXr7WzhdDqn2qBp1nMJ7tHa4ieLCiBJEM2kKjFl78kEy+uV6+mnLizlWFNNBcLfkL9tHxTyIUlURQZqeKaJaTrOVRpx7yqUj9E5bBs/kor1/NlMLSPAB1vw/DF1sfSgwQgkWKSAtz3UL4fkdxahU6urgHMxGZ6qGXvYXl2TzuAJyr+pf6BI8jJcyOEYAgKQd5+ZFGeYHUwCau3untz+rfK4ypbcXj68cI2qav5fZbwTplqfRE95hRYl6yODCOoNjFaev1Nj1/7mJgv9p/SvTc3m75cayAtURR1TqMF2D+s8B06Z9/VyFORhrdCgcmEwtTx2V5ipJTETqkSAbTQLtWzPoKe0pDmvQ2wO3wuSwVpJPt7qYAjSH5Yf92WPVRVcCKK4Sf72iMQZMUd2/rFEHFe4eLLdIoB5mqfnw/KN9X0O0YBQLK1Plj6hYfwgRkpTQDn/JUeekNetnkztNik7UjfaVnOEFKYQ9/uoOEICEqRXeWuNJtoq8E7tSgDCKp9A543jql9NkiiLLQEZ4VG0Bo93tLA=
   on:
     tags: true
-    repo: rajsite/webvipolyfill
+deploy:
+  provider: releases
+  skip_cleanup: true
+  api_key:
+    secure: VVDgF8J0FDrcTmly8DSm7JMgwd7tH9LKJNfTayfDqJU81OyrUpeJ4zXSwIFoScdgv99hQLT/OPF9/NT8xLitq+zAegQnpxDUqCfPMRuiyHI+3iI/x4Gwy10nj6r1WRaVdQdi24S22zuybhrUO83fZJ88/sAXUcooBWU7iL1UlEZyYn9VbO4W+cFooNL2AfZpFzpMgbb5BTn7cNXVwRWyHU9VdwnOUotdqmrqesZZpL+2UHD9XRwU3NWTkKfM0Ry1SoqTj3wpqkssbiaxPNVwkj7eW7ruhJgQiObr/3BgTNNwD08D1rMHwvlE4UY33qMMxkFrdFcSvR7G32/Qi6z58MZOakwLht2JZsTa+znNXkkDer+Dd91+UgMY+mbZcnT2Eqe9uWF+VpC/lWyZlz5LAmvuxy+SpZiEtvZbz5xJEbK4foT2pO1i6bkWH2C+oAFhNMUk8+a+JxO2VPpzXJRtn570OfWLAFhxk3bTRRadkYokAHr96YeuW6C/6geS9ihdjF5xQCrxVjmEHzAnIyrr4Epx9JUEdFsKxfyXL+zOl8Ug5zEZfs8vl/BBNxelrYVa2p7aRjpFxbSU5xv/GQerB1mM1vKHcype3OjyKJSjNCrXBZtzdmOZM5IIj/zifRfMK+LQrn99lFE6vy0lIEq5mFi9ucbXPeYfI59W2bDlLB4=
+  on:
+    tags: true
+  file:
+    - "webvipolyfill.zip"
