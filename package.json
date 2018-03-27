@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "npm run lint && npm run test-jasmine && npm run test-karma",
-    "build": "rollup --config && cpx \"source/webvipolyfill_*\" webvipolyfill_resources",
+    "build": "rollup --config && uglifyjs \"source/webvipolyfill_*\" -b --comments \"all\" -o webvipolyfill_resources/webvipolyfill_functions.js",
     "test-jasmine": "jasmine",
     "test-karma": "karma start --browsers ChromeHeadlessNoSandbox",
     "test-karma-manual": "karma start --no-single-run"
@@ -16,7 +16,6 @@
   "license": "MIT",
   "dependencies": {},
   "devDependencies": {
-    "cpx": "^1.5.0",
     "eslint": "^4.17.0",
     "jasmine": "^3.0.0",
     "karma": "^2.0.0",
@@ -27,6 +26,7 @@
     "rollup": "^0.55.1",
     "rollup-plugin-commonjs": "^8.3.0",
     "rollup-plugin-node-resolve": "^3.0.2",
+    "uglify-js": "^3.3.16",
     "vireo": "^6.1.4",
     "xhook": "^1.4.7",
     "xhr2": "^0.1.4"
