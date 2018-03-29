@@ -1,9 +1,17 @@
 import {readAsText} from 'promise-file-reader';
 import {xhook} from 'xhook';
+import {version} from '../package.json';
 
 var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
+
 var scheme = 'webvipolyfill';
 var protocol = scheme + ':';
+
+// Export the version number of the webvipolyfill package
+// Polyfills may use this version to validate synchronization between JS and the WebVI
+var majorVersion = parseInt(version, 10);
+commonjsGlobal.webvipolyfill_version = majorVersion;
+
 var encoder = new TextEncoder();
 var decoder = new TextDecoder();
 
@@ -30,20 +38,40 @@ xhook.before(function (request, callback) {
     var name = request.url.substring(protocol.length);
     var polyfillAction = commonjsGlobal[name];
     if (typeof polyfillAction !== 'function') {
-        // TODO return an error instead
-        callback();
+        callback({
+            status: 44302
+        });
         return;
     }
 
-    Promise.resolve(polyfillAction).then(function (polyfillAction) {
-        requestDataAsString(request.body).then(function(body) {
-            var result = polyfillAction(body);
-            var resultArrayBuffer = encoder.encode(result);
+    requestDataAsString(request.body).then(function(body) {
+        var result;
+        try {
+            result = polyfillAction(body);
+        } catch (ex) {
             callback({
-                status: 200,
-                statusText: 'OK',
-                data: resultArrayBuffer
+                status: 44300
             });
+            return;
+        }
+
+        if (result === undefined) {
+            result = '';
+        }
+
+        if (typeof result !== 'string') {
+            callback({
+                status: 44304
+            });
+            return;
+        }
+
+        // As long as result is a string it seems like this doesn't error
+        var resultArrayBuffer = encoder.encode(result);
+        callback({
+            status: 200,
+            statusText: 'OK',
+            data: resultArrayBuffer
         });
     });
 });
