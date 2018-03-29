@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="3B5B134628DF29CF4466BE5348B9DEE3" Timestamp="1D3C704F79D1859" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="B7C5A4A0DFD8F094D848E7354DF90A93" Timestamp="1D3C71C0DC06D3F" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="5.3.0.59009" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="5.2.0.49153" Version="5.2.0.49153" />
 		<ParsableNamespace AssemblyFileVersion="5.3.0.59009" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="5.2.0.9" Version="5.2.0.49152" />
@@ -59,10 +59,10 @@
 			<NodeLabel AttachedTo="68" Bounds="568 300 42 14" Id="77" xmlns="http://www.ni.com/PlatformFramework">
 				<p.Text>error in</p.Text>
 			</NodeLabel>
-			<DataAccessor Bounds="810 300 40 15" DataItem="78" Id="79" Label="88" xmlns="http://www.ni.com/MocCommon">
+			<DataAccessor Bounds="945 300 40 15" DataItem="78" Id="79" Label="88" xmlns="http://www.ni.com/MocCommon">
 				<Terminal DataType="Error" Direction="Input" Hotspot="3 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
 			</DataAccessor>
-			<NodeLabel AttachedTo="79" Bounds="855 300 50 14" Id="88" xmlns="http://www.ni.com/PlatformFramework">
+			<NodeLabel AttachedTo="79" Bounds="990 300 50 14" Id="88" xmlns="http://www.ni.com/PlatformFramework">
 				<p.Text>error out</p.Text>
 			</NodeLabel>
 			<FlattenToJSON Bounds="665 270 40 40" Id="89" />
@@ -103,7 +103,7 @@
 				<PropertyItemTerminal Action="Write" DataType="Int32" Hotspot="0 30" Id="c1t0v" Path="severity" PathElementMemberKinds="Field" Usage="Required" />
 				<PropertyItemTerminal Action="Write" DataType="String" Hotspot="0 45" Id="c2t0v" Path="message" PathElementMemberKinds="Field" Usage="Required" />
 			</PropertyNode>
-			<Wire Facade="WireInvisibleFacade" Id="99" Joints="N(90:Out)|(523,275) v(-10) h(-148) v(10) N(98:instance in)|(380,275)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Facade="WireInvisibleFacade" Id="99" Joints="N(90:Out)|(380,275) N(98:instance in)|(380,275)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
 			<MethodCall Bounds="275 280 40 40" DomainName="webvipolyfill" Id="100" ResolveFailedHint="&quot;C:\\dev\\Github\\webvipolyfill\\webvipolyfill_components\\webvipolyfill.gcomp\\webvipolyfill_version.gviweb&quot;" Target="webvipolyfill:webvipolyfill_version\.gviweb" xmlns="http://www.ni.com/MocCommon">
 				<p.MethodDeclaration>
 					<MethodDeclaration xmlns="http://www.ni.com/PlatformFramework">
@@ -142,16 +142,51 @@
 				<p.Text>action</p.Text>
 			</NodeLabel>
 			<Wire Id="111" Joints="N(109:Out)|(715,230) h(5) v(45) N(106:L0)|(750,275)" xmlns="http://www.ni.com/PlatformFramework" />
-			<Literal Bounds="660 250 25 15" DataType="Boolean" Id="112" Label="113" xmlns="http://www.ni.com/MocCommon">
+			<Literal Bounds="694 258 12 9" DataType="Boolean" Id="112" Label="113" xmlns="http://www.ni.com/MocCommon">
 				<p.Data>True</p.Data>
 				<BooleanBehavior />
+				<DockedConstantFacade UndockedSize="25 15" />
 			</Literal>
-			<NodeLabel AttachedTo="112" Bounds="660 232 30 15" Id="113" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+			<NodeLabel AttachedTo="112" Bounds="694 240 30 15" Id="113" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
 				<p.Text>enable LabVIEW extensions</p.Text>
 			</NodeLabel>
-			<Wire Id="114" Joints="N(112:Out)|(685,255) h(5) N(89:enable LabVIEW extensions)|(690,270)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Facade="WireInvisibleFacade" Id="114" Joints="N(112:Out)|(719,263) v(9) h(-9) v(-7) h(-20) N(89:enable LabVIEW extensions)|(690,270)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
 			<Wire Id="115" Joints="N(89:JSON string)|(705,275) h(5) v(10) N(106:L1)|(750,285)" xmlns="http://www.ni.com/PlatformFramework" />
-			<Wire Id="116" Joints="N(106:R3)|(790,305) N(79:Value)|(813,305)" xmlns="http://www.ni.com/PlatformFramework" />
+			<DecimalStringToNumber Bounds="830 255 40 40" Id="123" />
+			<Wire Id="124" Joints="N(106:R0)|(790,275) h(5) v(-15) N(123:string)|(830,260)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Literal Bounds="818 266 12 9" DataType="Int32" Id="125" Label="126" xmlns="http://www.ni.com/MocCommon">
+				<p.Data>0</p.Data>
+				<NumericBehavior Interpretation="Exact" ValueFormatter="LV:0" />
+				<DockedConstantFacade LabelPosition="Side" UndockedSize="40 15" />
+			</Literal>
+			<NodeLabel AttachedTo="125" Bounds="783 266 30 15" Id="126" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>offset</p.Text>
+			</NodeLabel>
+			<Literal Bounds="818 276 12 9" DataType="Int32" Id="127" Label="128" xmlns="http://www.ni.com/MocCommon">
+				<p.Data>0</p.Data>
+				<NumericBehavior Interpretation="Exact" ValueFormatter="LV:0" />
+				<DockedConstantFacade LabelPosition="Side" UndockedSize="40 15" />
+			</Literal>
+			<NodeLabel AttachedTo="127" Bounds="783 276 30 15" Id="128" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
+				<p.Text>default</p.Text>
+			</NodeLabel>
+			<Wire Facade="WireInvisibleFacade" Id="129" Joints="N(125:Out)|(858,271) v(9) h(-33) v(-10) N(123:offset)|(830,270)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Facade="WireInvisibleFacade" Id="130" Joints="N(127:Out)|(858,281) v(9) h(-38) v(-10) N(123:default (0 I32\))|(830,280)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
+			<MethodCall Bounds="895 300 40 40" DomainName="webvipolyfill" Id="148" ResolveFailedHint="&quot;C:\\dev\\Github\\webvipolyfill\\webvipolyfill_components\\webvipolyfill.gcomp\\webvipolyfill_version_error_merge.gviweb&quot;" Target="webvipolyfill:webvipolyfill_version_error_merge\.gviweb" xmlns="http://www.ni.com/MocCommon">
+				<p.MethodDeclaration>
+					<MethodDeclaration xmlns="http://www.ni.com/PlatformFramework">
+						<Parameter Id="L0" Desc="error in" />
+						<Parameter Id="L1" Desc="error code in" />
+						<Parameter Id="R0" Desc="error out" />
+					</MethodDeclaration>
+				</p.MethodDeclaration>
+				<Terminal DataType="Error" Direction="Input" Id="L0" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Int32" Direction="Input" Hotspot="0 15" Id="L1" xmlns="http://www.ni.com/PlatformFramework" />
+				<Terminal DataType="Error" Direction="Output" Hotspot="40 5" Id="R0" xmlns="http://www.ni.com/PlatformFramework" />
+			</MethodCall>
+			<Wire Id="149" Joints="N(106:R3)|(790,305) N(148:L0)|(895,305)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="150" Joints="N(123:number)|(870,280) h(7) v(35) N(148:L1)|(895,315)" xmlns="http://www.ni.com/PlatformFramework" />
+			<Wire Id="151" Joints="N(148:R0)|(935,305) N(79:Value)|(948,305)" xmlns="http://www.ni.com/PlatformFramework" />
 		</BlockDiagram>
 		<HtmlFrontPanel Height="[float]768" Id="15" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Fixed" Top="[float]0" Width="[float]1024" xmlns="http://www.ni.com/NationalInstruments.LabVIEW.HtmlVI">
 			<HtmlRingSelector AllowNonSequentialValues="[bool]False" AllowUndefinedValueEntry="[bool]False" BaseName="[string]Text Ring" Height="[float]24" Id="59" IsTypeAheadEnabled="[bool]True" Label="[UIModel]60" Left="[float]132" MinHeight="[float]16" MinWidth="[float]50" TabIndex="[int]0" Top="[float]276" Value="{DataItemBinding Id=57}" ValueType="[Type]Int32" VisualMode="[SelectorVisualMode]RingStyle" Width="[float]150" xmlns="http://www.ni.com/Controls.LabVIEW.Design">
@@ -237,7 +272,7 @@
 								</Text>
 							</IconTemplate>
 							<Text Left="[float]4" SizeMode="[TextModelSizeMode]Fixed" Text="[string]Version" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]5" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden" Width="[float]32">
-								<FontSetting FontFamily="Verdana" FontSize="6" />
+								<FontSetting FontFamily="Arial" FontSize="6" />
 							</Text>
 							<IconTemplate Height="[float]40" IsHitTestVisible="[bool]False" Left="[float]0" TemplateName="[string][Comp]webvipolyfill.gcomp" Top="[float]0" Width="[float]40" />
 						</IconPanel>
@@ -254,6 +289,26 @@
 							<Rectangle EditMode="[ShapeEditMode]EditablePath" Fill="[SMSolidColorBrush]#fff0db4f" Height="[float]40" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]0" RadiusY="[float]0" Stroke="[SMSolidColorBrush]#ff000000" StrokeThickness="[float]1" Top="[float]0" Width="[float]40" />
 							<Text Height="[float]19" Left="[float]18" Text="[string]JS" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]22" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden" Width="[float]20">
 								<FontSetting FontFamily="Arial" FontSize="12" FontStyle="Bold" />
+							</Text>
+							<IconTemplate Height="[float]40" IsHitTestVisible="[bool]False" Left="[float]0" TemplateName="[string][Comp]webvipolyfill.gcomp" Top="[float]0" Width="[float]40" />
+						</IconPanel>
+					</Icon>
+				</MergeItem>
+			</MergeScript>
+		</p.IconModel>
+		<p.IconModel Target="webvipolyfill:webvipolyfill_version_error_merge\.gviweb">
+			<MergeScript>
+				<MergeItem Path="." IsPrimary="True">
+					<Icon ListViewIconCrop="0 0 40 40">
+						<IconPanel Height="[float]40" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Resize" Top="[float]0" Width="[float]40">
+							<IconTemplate Height="[float]40" HorizontalAlignment="[HorizontalAlignment]Stretch" Left="[float]0" TemplateName="[string]Custom0" Top="[float]0" VerticalAlignment="[VerticalAlignment]Stretch" Width="[float]40">
+								<Rectangle EditMode="[ShapeEditMode]EditablePath" Fill="[SMSolidColorBrush]#fff0db4f" Height="[float]40" HorizontalAlignment="[HorizontalAlignment]Left" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" RadiusX="[float]0" RadiusY="[float]0" Stroke="[SMSolidColorBrush]#ff000000" StrokeThickness="[float]1" Top="[float]0" VerticalAlignment="[VerticalAlignment]Top" Width="[float]40" />
+								<Text Height="[float]18" HorizontalAlignment="[HorizontalAlignment]Left" Left="[float]18" Text="[string]JS" TextAlignment="[TextAlignment]Center" TextWrapping="[TextWrapping]Wrap" Top="[float]22" VerticalAlignment="[VerticalAlignment]Top" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden" Width="[float]20">
+									<FontSetting FontFamily="Arial" FontSize="12" FontStyle="Bold" />
+								</Text>
+							</IconTemplate>
+							<Text Height="[float]30" Left="[float]3" SizeMode="[TextModelSizeMode]Fixed" Text="[string]Merge&#xD;&#xA;Version&#xD;&#xA;Error" TextAlignment="[TextAlignment]Left" TextWrapping="[TextWrapping]Wrap" Top="[float]2" VerticalScrollBarVisibility="[ScrollBarVisibility]Hidden" Width="[float]32">
+								<FontSetting FontFamily="Arial" FontSize="6" />
 							</Text>
 							<IconTemplate Height="[float]40" IsHitTestVisible="[bool]False" Left="[float]0" TemplateName="[string][Comp]webvipolyfill.gcomp" Top="[float]0" Width="[float]40" />
 						</IconPanel>

@@ -11,6 +11,7 @@ var protocol = scheme + ':';
 // Polyfills may use this version to validate synchronization between JS and the WebVI
 var majorVersion = parseInt(version, 10);
 commonjsGlobal.webvipolyfill_version = majorVersion;
+commonjsGlobal.webvipolyfill_version_error_code = 10001;
 
 var encoder = new TextEncoder();
 var decoder = new TextDecoder();
