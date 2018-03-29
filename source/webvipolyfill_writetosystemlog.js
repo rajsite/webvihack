@@ -12,8 +12,8 @@
     var webvipolyfill_writetosystemlog = function (inputJSON) {
         var input = JSON.parse(inputJSON);
 
-        if (input.webvipolyfill_version !== window.webvipolyfill_version) {
-            return String(window.webvipolyfill_version_error_code);
+        if (input.webvipolyfill_version !== commonjsGlobal.webvipolyfill_version) {
+            return String(commonjsGlobal.webvipolyfill_version_error_code);
         }
 
         if (input.severity === 1) {
