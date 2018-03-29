@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="ECFEBAC8E54EDA7C85BD7D2D33AA8FC9" Timestamp="1D3C715AA33E488" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="F86DB37BE91832419FC206099DB7D960" Timestamp="1D3C7177E17B764" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="5.3.0.59009" FeatureSetName="GComponentFeatureSet" Name="http://www.ni.com/GComponent.xsd" OldestCompatibleVersion="5.2.0.0" Version="5.2.0.49152" />
 		<ParsableNamespace AssemblyFileVersion="5.3.0.59009" FeatureSetName="Web Module: WebVI" Name="http://www.ni.com/NationalInstruments.LabVIEW.HtmlVI" OldestCompatibleVersion="5.2.0.0" Version="5.2.0.49152" />
@@ -16,12 +16,12 @@
 		<ComponentConfiguration ComponentOutputType="WebApplication" Id="10" Name="Configuration1">
 			<CompilerSymbolTable Id="11" xmlns="http://www.ni.com/PlatformFramework" />
 			<WebApplicationOutputTypeProperties Id="12" xmlns="http://www.ni.com/NationalInstruments.LabVIEW.HtmlVI" />
-			<ComponentItemProperties AssociatedEnvoyId="25" Id="26" TopLevel="True" />
-			<ComponentItemProperties AssociatedEnvoyId="29" Id="30" TopLevel="True" />
-			<ComponentItemProperties AssociatedEnvoyId="28" Id="31" TopLevel="True" />
-			<ComponentItemProperties AssociatedEnvoyId="32" Id="33" TopLevel="True" />
-			<ComponentItemProperties AlwaysInclude="True" AssociatedEnvoyId="34" Id="35" />
-			<ComponentItemProperties AlwaysInclude="True" AssociatedEnvoyId="36" Id="37" />
+			<ComponentItemProperties AssociatedEnvoyId="38" Id="44" TopLevel="True" />
+			<ComponentItemProperties AlwaysInclude="True" AssociatedEnvoyId="39" Id="45" />
+			<ComponentItemProperties AssociatedEnvoyId="40" Id="46" TopLevel="True" />
+			<ComponentItemProperties AssociatedEnvoyId="41" Id="47" TopLevel="True" />
+			<ComponentItemProperties AlwaysInclude="True" AssociatedEnvoyId="42" Id="48" />
+			<ComponentItemProperties AssociatedEnvoyId="43" Id="49" TopLevel="True" />
 		</ComponentConfiguration>
 	</ComponentDefinition>
 	<EnvoyManagerFile Id="6" xmlns="http://www.ni.com/PlatformFramework">
@@ -29,23 +29,23 @@
 		<EmbeddedDefinitionReference Id="8" ModelDefinitionType="{http://www.ni.com/GComponent.xsd}ComponentDefinitionEnvoyHierarchyRoot" Name="Global\ namespace">
 			<ComponentDefinitionEnvoyHierarchyRoot xmlns="http://www.ni.com/GComponent.xsd" />
 			<NameScopingEnvoy AutomaticallyResolveUp="True" Id="20" Name="tests">
-				<NameScopingEnvoy AutomaticallyResolveUp="True" Id="24" Name="webvipolyfill_writesystemlog">
-					<SourceFileReference Id="25" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="blank_name\.gviweb" OverridingModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.HTMLVirtualInstrument" StoragePath="webvipolyfill_writesystemlog\blank_name.gviweb" />
-					<SourceFileReference Id="28" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="invalid_name\.gviweb" OverridingModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.HTMLVirtualInstrument" StoragePath="webvipolyfill_writesystemlog\invalid_name.gviweb" />
-					<SourceFileReference Id="29" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="function_errors\.gviweb" OverridingModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.HTMLVirtualInstrument" StoragePath="webvipolyfill_writesystemlog\function_errors.gviweb" />
-					<SourceFileReference Id="32" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="invalid_return_type\.gviweb" OverridingModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.HTMLVirtualInstrument" StoragePath="webvipolyfill_writesystemlog\invalid_return_type.gviweb" />
-					<EmbeddedDefinitionReference Id="34" ModelDefinitionType="NationalInstruments.ProjectExplorer.ExternalFileSupport.Modeling.ExternalFileType" Name="function_errors\.fixture\.js">
+				<NameScopingEnvoy AutomaticallyResolveUp="True" Id="24" Name="webvipolyfill_writesystemlog" />
+				<NameScopingEnvoy AutomaticallyResolveUp="True" Id="27" Name="webvipolyfill">
+					<SourceFileReference Id="38" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="blank_name\.gviweb" OverridingModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.HTMLVirtualInstrument" StoragePath="webvipolyfill\blank_name.gviweb" />
+					<EmbeddedDefinitionReference Id="39" ModelDefinitionType="NationalInstruments.ProjectExplorer.ExternalFileSupport.Modeling.ExternalFileType" Name="function_errors\.fixture\.js">
 						<ExternalFile>
-							<p.StoragePath>"webvipolyfill_writesystemlog\\function_errors.fixture.js"</p.StoragePath>
+							<p.StoragePath>"webvipolyfill\\function_errors.fixture.js"</p.StoragePath>
 						</ExternalFile>
 					</EmbeddedDefinitionReference>
-					<EmbeddedDefinitionReference Id="36" ModelDefinitionType="NationalInstruments.ProjectExplorer.ExternalFileSupport.Modeling.ExternalFileType" Name="invalid_return_type\.fixture\.js">
+					<SourceFileReference Id="40" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="function_errors\.gviweb" OverridingModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.HTMLVirtualInstrument" StoragePath="webvipolyfill\function_errors.gviweb" />
+					<SourceFileReference Id="41" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="invalid_name\.gviweb" OverridingModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.HTMLVirtualInstrument" StoragePath="webvipolyfill\invalid_name.gviweb" />
+					<EmbeddedDefinitionReference Id="42" ModelDefinitionType="NationalInstruments.ProjectExplorer.ExternalFileSupport.Modeling.ExternalFileType" Name="invalid_return_type\.fixture\.js">
 						<ExternalFile>
-							<p.StoragePath>"webvipolyfill_writesystemlog\\invalid_return_type.fixture.js"</p.StoragePath>
+							<p.StoragePath>"webvipolyfill\\invalid_return_type.fixture.js"</p.StoragePath>
 						</ExternalFile>
 					</EmbeddedDefinitionReference>
+					<SourceFileReference Id="43" ModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.VirtualInstrument" Name="invalid_return_type\.gviweb" OverridingModelDefinitionType="NationalInstruments.LabVIEW.VI.Modeling.HTMLVirtualInstrument" StoragePath="webvipolyfill\invalid_return_type.gviweb" />
 				</NameScopingEnvoy>
-				<NameScopingEnvoy AutomaticallyResolveUp="True" Id="27" Name="webvipolyfill" />
 			</NameScopingEnvoy>
 		</EmbeddedDefinitionReference>
 		<NameScopingEnvoy Id="9" ModelDefinitionType="{http://www.ni.com/GComponent.xsd}ComponentDefinitionContentReferenceRoot" Name="tests\.gcomp" NameTracksFileName="True">
