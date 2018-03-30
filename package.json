@@ -1,6 +1,6 @@
 {
   "name": "webvipolyfill",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "A pattern for creating polyfills for WebVIs in LabVIEW NXG",
   "scripts": {
     "lint": "eslint .",
