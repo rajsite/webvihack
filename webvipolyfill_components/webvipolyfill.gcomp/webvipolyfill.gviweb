@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="C911322B35A80E3FD3E8F38ABFD9CFD1" Timestamp="1D3C71F69FF8A16" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="A5CCCD0EC028BC6BE2879B5F98D45AB8" Timestamp="1D3C7DAAF88E017" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="5.3.0.59009" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="5.2.0.49153" Version="5.2.0.49153" />
 		<ParsableNamespace AssemblyFileVersion="5.3.0.59009" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="5.2.0.9" Version="5.2.0.49152" />
@@ -49,11 +49,11 @@
 				<p.Text>error out</p.Text>
 			</NodeLabel>
 			<Wire Id="357" Joints="N(1176:436)|(864,360) N(255:Value)|(888,360)" xmlns="http://www.ni.com/PlatformFramework" />
-			<CaseStructure Bounds="130 275 730 495" DataType="Error" Default="437" Id="436" Selected="438" UserSelectorBounds="312 0 106 17">
-				<CaseStructure.Case Bounds="5 5 720 485" Id="437" Pattern="Error">
+			<CaseStructure Bounds="130 275 730 545" DataType="Error" Default="437" Id="436" Selected="438" UserSelectorBounds="312 0 106 17">
+				<CaseStructure.Case Bounds="5 5 720 535" Id="437" Pattern="Error">
 					<Wire Id="1180" Joints="N(439:437)|(4,90) h(707) v(-10) N(1176:437)|(716,80)" xmlns="http://www.ni.com/PlatformFramework" />
 				</CaseStructure.Case>
-				<CaseStructure.Case Bounds="5 5 720 485" Id="438" Pattern="No Error">
+				<CaseStructure.Case Bounds="5 5 720 535" Id="438" Pattern="No Error">
 					<DataAccessor Bounds="75 55 40 15" DataItem="16" Id="17" Label="20" xmlns="http://www.ni.com/MocCommon">
 						<Terminal DataType="String" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
 					</DataAccessor>
@@ -99,8 +99,8 @@
 						<p.Data>0</p.Data>
 						<NumericBehavior Interpretation="Exact" ValueFormatter="LV:0" />
 					</Literal>
-					<Literal Bounds="320 165 210 95" DataType="String" Id="197" Label="198" xmlns="http://www.ni.com/MocCommon">
-						<p.Data>Error attempting to invoke the webvipolyfill library. Make sure webvipolyfill.js is added to your Web Application component and as a script tag in the HTML of your Top-Level gviweb.</p.Data>
+					<Literal Bounds="320 165 210 115" DataType="String" Id="197" Label="198" xmlns="http://www.ni.com/MocCommon">
+						<p.Data>Error attempting to invoke the webvipolyfill library. Make sure webvipolyfill.js and webvipolyfill_functions.js are added to your Web Application component and that they are added as script tags in the HTML of your Top-Level gviweb.</p.Data>
 						<StringBehavior SizeToContent="False" TextDisplayMode="Default" />
 					</Literal>
 					<MethodCall Bounds="265 55 40 40" DomainName="NI:HTTP" Id="53" ResolveFailedHint="POST Buffer.gvi, Package: (LabVIEW NXG HTTP Library Files, Version: 2.0.0)" Target="NI:HTTP:POST\ Buffer\.gvi" xmlns="http://www.ni.com/MocCommon">
@@ -152,7 +152,7 @@
 					<DataAccessor Bounds="70 75 40 15" DataItem="268" Id="271" Label="272" xmlns="http://www.ni.com/MocCommon">
 						<Terminal DataType="String" Direction="Output" Hotspot="40 5" Id="Value" xmlns="http://www.ni.com/PlatformFramework" />
 					</DataAccessor>
-					<CaseStructure Bounds="305 275 280 195" DataType="UInt32" Default="306" Id="305" Selected="372" UserSelectorBounds="90 0 100 17">
+					<CaseStructure Bounds="305 325 280 195" DataType="UInt32" Default="306" Id="305" Selected="307" UserSelectorBounds="90 0 100 17">
 						<CaseStructure.Case Bounds="5 5 270 185" Id="306" Pattern="Default">
 							<Literal Bounds="196 35 40 15" DataType="UInt32" Id="340" Label="398" xmlns="http://www.ni.com/MocCommon">
 								<p.Data>0</p.Data>
@@ -171,7 +171,7 @@
 						<CaseStructure.Case Bounds="5 5 270 185" Id="307" Pattern="44300">
 							<Wire Id="312" Joints="N(308:307)|(4,40) N(313:307)|(266,40)" xmlns="http://www.ni.com/PlatformFramework" />
 							<Literal Bounds="25 50 155 45" DataType="String" Id="314" Label="315" xmlns="http://www.ni.com/MocCommon">
-								<p.Data>An exception occurred invoking the external JavaScript function (</p.Data>
+								<p.Data>An exception occurred invoking JavaScript function (</p.Data>
 								<StringBehavior SizeToContent="False" TextDisplayMode="Default" />
 							</Literal>
 							<NodeLabel AttachedTo="314" Bounds="25 32 30 15" Id="315" Visible="False" xmlns="http://www.ni.com/PlatformFramework">
@@ -223,7 +223,7 @@
 								<StringBehavior TextDisplayMode="Default" />
 							</Literal>
 							<Literal Bounds="20 145 160 30" DataType="String" Id="425" xmlns="http://www.ni.com/MocCommon">
-								<p.Data>). Must return a JavaScript String.</p.Data>
+								<p.Data>). Must return a JavaScript string.</p.Data>
 								<StringBehavior SizeToContent="False" TextDisplayMode="Default" />
 							</Literal>
 							<ConcatenateStrings Bounds="210 55 40 50" Id="426" Terminals="outString=427, c0t0v=428, c1t0v=434, c2t0v=430, c3t0v=435, c4t0v=432" VerticalChunkCount="5" />
@@ -367,7 +367,7 @@
 						<p.Text>make warning</p.Text>
 					</NodeLabel>
 					<Wire Id="1175" Joints="N(344:R0)|(680,80) N(1176:438)|(716,80)" xmlns="http://www.ni.com/PlatformFramework" />
-					<Wire Id="133" Joints="N(17:Value)|(115,60) h(20) B(1) N(131:c1t0v)|(195,60) B(1) v(320) N(399:305)|(301,380)" xmlns="http://www.ni.com/PlatformFramework" />
+					<Wire Id="133" Joints="N(17:Value)|(115,60) h(20) B(1) N(131:c1t0v)|(195,60) B(1) v(370) N(399:305)|(301,430)" xmlns="http://www.ni.com/PlatformFramework" />
 					<Wire Id="132" Joints="N(116:Out)|(170,35) h(5) v(15) N(131:c0t0v)|(195,50)" xmlns="http://www.ni.com/PlatformFramework" />
 					<Wire Id="247" Joints="N(131:outString)|(235,50) h(10) v(20) N(53:L1)|(265,70)" xmlns="http://www.ni.com/PlatformFramework" />
 					<Wire Facade="WireInvisibleFacade" Id="353" Joints="N(345:Out)|(545,81) N(182:L0)|(545,80)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
@@ -382,12 +382,12 @@
 					<Wire Id="195" Joints="N(193:Out)|(450,140) h(25) v(-35) N(190:f)|(480,105)" xmlns="http://www.ni.com/PlatformFramework" />
 					<Wire Id="56" Joints="N(54:Out)|(245,135) h(35) N(53:B0)|(280,95)" xmlns="http://www.ni.com/PlatformFramework" />
 					<Wire Facade="WireInvisibleFacade" Id="85" Joints="N(83:Out)|(265,61) N(53:L0)|(265,60)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
-					<Wire Id="411" Joints="N(271:Value)|(110,80) h(10) B(1) N(53:L2)|(265,80) B(1) v(340) N(420:305)|(301,420)" xmlns="http://www.ni.com/PlatformFramework" />
+					<Wire Id="411" Joints="N(271:Value)|(110,80) h(10) B(1) N(53:L2)|(265,80) B(1) v(390) N(420:305)|(301,470)" xmlns="http://www.ni.com/PlatformFramework" />
 					<Wire Facade="WireInvisibleFacade" Id="88" Joints="N(86:Out)|(296,48) h(5) v(-10) h(-22) v(17) N(53:T0)|(280,55)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
-					<Wire Id="310" Joints="N(53:B1)|(290,95) v(225) N(308:305)|(301,320)" xmlns="http://www.ni.com/PlatformFramework" />
+					<Wire Id="310" Joints="N(53:B1)|(290,95) v(275) N(308:305)|(301,370)" xmlns="http://www.ni.com/PlatformFramework" />
 					<Wire Id="363" Joints="N(53:R2)|(305,80) h(10) v(-45) N(361:Value)|(328,35)" xmlns="http://www.ni.com/PlatformFramework" />
-					<Wire Id="385" Joints="N(313:305)|(589,320) h(6) v(-230) N(383:number)|(608,90)" xmlns="http://www.ni.com/PlatformFramework" />
-					<Wire Id="355" Joints="N(317:305)|(589,340) h(46) v(-240) N(344:L2)|(640,100)" xmlns="http://www.ni.com/PlatformFramework" />
+					<Wire Id="385" Joints="N(313:305)|(589,370) h(6) v(-280) N(383:number)|(608,90)" xmlns="http://www.ni.com/PlatformFramework" />
+					<Wire Id="355" Joints="N(317:305)|(589,390) h(46) v(-290) N(344:L2)|(640,100)" xmlns="http://www.ni.com/PlatformFramework" />
 					<Wire Id="384" Joints="N(383:32bit integer)|(635,90) N(344:L1)|(640,90)" xmlns="http://www.ni.com/PlatformFramework" />
 					<Wire Facade="WireInvisibleFacade" Id="390" Joints="N(386:Out)|(672,68) h(5) v(9) h(-22) N(344:T0)|(655,75)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />
 					<Wire Facade="WireInvisibleFacade" Id="391" Joints="N(388:Out)|(682,68) h(5) v(2) h(-22) N(344:T1)|(665,75)" Visible="False" xmlns="http://www.ni.com/PlatformFramework" />

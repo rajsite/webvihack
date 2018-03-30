@@ -66,5 +66,4 @@ webvipolyfill_resources
 .vscode
 Builds/**/*.*
 !Builds/**/*.via.txt
-!Builds/**/*.fixture.js
 source_intermediate
