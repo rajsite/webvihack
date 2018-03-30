@@ -46,6 +46,7 @@ xhook.before(function (request, callback) {
             callback({
                 status: 44300
             });
+            console.log(ex); // eslint-disable-line no-console
             return;
         }
 
