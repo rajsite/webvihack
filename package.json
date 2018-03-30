@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "npm run lint && npm run test-jasmine && npm run test-karma",
-    "build": "rollup --config && uglifyjs \"source/webvipolyfill_*\" -b --comments \"all\" -o webvipolyfill_resources/webvipolyfill_functions.js",
+    "build": "rollup --config && uglifyjs \"source_intermediate/webvipolyfill_version.js\" \"source/*.js\" -b --comments \"all\" -o webvipolyfill_resources/webvipolyfill_functions.js",
     "test-jasmine": "jasmine",
     "test-jasmine-manual": "node --inspect-brk node_modules/jasmine/bin/jasmine.js",
     "test-karma": "karma start --browsers ChromeHeadlessNoSandbox",

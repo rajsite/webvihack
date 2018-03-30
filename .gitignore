@@ -67,3 +67,4 @@ webvipolyfill_resources
 Builds/**/*.*
 !Builds/**/*.via.txt
 !Builds/**/*.fixture.js
+source_intermediate
