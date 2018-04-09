@@ -1,5 +1,5 @@
 node_modules
-webvipolyfill_resources
+webvihack_resources
 !.eslintrc.js
 Builds
 source_intermediate

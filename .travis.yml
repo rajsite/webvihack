@@ -14,14 +14,14 @@ before_script:
 - npm run build
 - tar -tf $(npm pack)
 # Convert the tgz created by npm pack to a zip for release
-- rm -rf webvipolyfill_temp_out
-- mkdir webvipolyfill_temp_out
-- tar xzf *.tgz -C webvipolyfill_temp_out
-- cd webvipolyfill_temp_out/package/
-- zip -r ../../webvipolyfill.zip .
+- rm -rf build_temp_out
+- mkdir build_temp_out
+- tar xzf *.tgz -C build_temp_out
+- cd build_temp_out/package/
+- zip -r ../../webvihack.zip .
 - cd ../../
-- zipinfo -1 webvipolyfill.zip
-- rm -rf webvipolyfill_temp_out
+- zipinfo -1 webvihack.zip
+- rm -rf build_temp_out
 deploy:
   provider: npm
   skip_cleanup: true
@@ -38,4 +38,4 @@ deploy:
   on:
     tags: true
   file:
-    - "webvipolyfill.zip"
+    - "webvihack.zip"

@@ -62,7 +62,7 @@ typings/
 *.lvcompile
 
 # WebVI polyfill specific
-webvipolyfill_resources
+webvihack_resources
 .vscode
 Builds/**/*.*
 !Builds/**/*.via.txt

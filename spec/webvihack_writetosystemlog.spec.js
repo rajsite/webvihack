@@ -1,4 +1,4 @@
-describe('Verifies the Write to System Log VI webvipolyfill', function () {
+describe('Verifies the Write to System Log VI', function () {
     beforeEach(function () {
         spyOn(console, 'log');
     });
@@ -9,7 +9,7 @@ describe('Verifies the Write to System Log VI webvipolyfill', function () {
             define(MyVI dv(VirtualInstrument (
                 Locals: c(
                     e(dv(.UInt32 0) handle)
-                    e('{"webvipolyfill_version":1,"message":"Hello World!", "severity":0}' buffer)
+                    e('{"webvihack_version":1,"message":"Hello World!", "severity":0}' buffer)
                     e('' headers)
                     e('' body)
                     e(dv(.UInt32 0) statusCode)
@@ -25,7 +25,7 @@ describe('Verifies the Write to System Log VI webvipolyfill', function () {
                     ) clusterRepresentation)
                 )
                 clump (
-                    HttpClientPost(handle 'webvipolyfill:webvipolyfill_writetosystemlog' '' buffer -1 headers body statusCode error)
+                    HttpClientPost(handle 'webvihack:webvihack_writetosystemlog' '' buffer -1 headers body statusCode error)
                     Println(body)
                 )
             ) ) )

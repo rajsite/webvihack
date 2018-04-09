@@ -3,9 +3,9 @@ import commonjs from 'rollup-plugin-commonjs';
 import json from 'rollup-plugin-json';
 
 export default [{
-    input: 'source_modules/webvipolyfill_version.js',
+    input: 'source_modules/webvihack_version.js',
     output: {
-        file: 'source_intermediate/webvipolyfill_version.js',
+        file: 'source_intermediate/webvihack_version.js',
         format: 'umd'
     },
     plugins: [
@@ -14,9 +14,9 @@ export default [{
         commonjs()
     ]
 }, {
-    input: 'source_modules/webvipolyfill.js',
+    input: 'source_modules/webvihack.js',
     output: {
-        file: 'webvipolyfill_resources/webvipolyfill.js',
+        file: 'webvihack_resources/webvihack.js',
         format: 'umd'
     },
     plugins: [

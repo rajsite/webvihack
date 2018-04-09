@@ -22,13 +22,13 @@
 
             commonjsGlobal.Vireo = require('vireo');
             commonjsGlobal.rebootAndLoadVia = require('../support/rebootAndLoadVia.js');
-            require('../../webvipolyfill_resources/webvipolyfill.js');
-            require('../../webvipolyfill_resources/webvipolyfill_functions.js');
+            require('../../webvihack_resources/webvihack.js');
+            require('../../webvihack_resources/webvihack_functions.js');
         } else {
             commonjsGlobal.Vireo = window.NationalInstruments.Vireo.Vireo;
             // rebootAndLoadVia should already be loaded to window.rebootAndLoadVia
-            // webvipolyflll should ready be loaded to window.webvipolyfill
-            // webvipolyfills already loaded
+            // webvihack should ready be loaded to window.webvihack
+            // the hacks should be loaded as window.webvihack_*
         }
 
     });

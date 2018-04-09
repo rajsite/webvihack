@@ -28,7 +28,7 @@
                     pattern: 'Builds/**/*.via.txt',
                     included: false
                 },
-                'webvipolyfill_resources/*.js',
+                'webvihack_resources/*.js',
                 'spec/helpers/*.js',
 
                 // test specs

@@ -3,7 +3,7 @@ import {xhook} from 'xhook';
 
 var commonjsGlobal = typeof window !== 'undefined' ? window : typeof global !== 'undefined' ? global : typeof self !== 'undefined' ? self : {};
 
-var scheme = 'webvipolyfill';
+var scheme = 'webvihack';
 var protocol = scheme + ':';
 
 var encoder = new TextEncoder();
@@ -20,7 +20,7 @@ var requestDataAsString = function (data) {
 
 // TODO block all hooks on registry loading, works since all requests are async by default
 xhook.before(function (request, callback) {
-    // Delegate to the native request if not a webvipolyfill request
+    // Delegate to the native request if targetting any other protocol
     if (request.url.indexOf(protocol) !== 0) {
         callback();
         return;
@@ -28,10 +28,10 @@ xhook.before(function (request, callback) {
 
     // Verify that a POST method was used or error
 
-    // Find the name of the polyfill to use
+    // Find the name of the JavaScript function in global scope to use
     var name = request.url.substring(protocol.length);
-    var polyfillAction = commonjsGlobal[name];
-    if (typeof polyfillAction !== 'function') {
+    var action = commonjsGlobal[name];
+    if (typeof action !== 'function') {
         callback({
             status: 44302
         });
@@ -41,7 +41,7 @@ xhook.before(function (request, callback) {
     requestDataAsString(request.body).then(function(body) {
         var result;
         try {
-            result = polyfillAction(body);
+            result = action(body);
         } catch (ex) {
             callback({
                 status: 44300
