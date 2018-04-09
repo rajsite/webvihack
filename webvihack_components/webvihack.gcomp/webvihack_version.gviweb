@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<SourceFile Checksum="3BA343FD5B7B747E4BFC93FB9156F33A" Timestamp="1D3CFB6308E8129" xmlns="http://www.ni.com/PlatformFramework">
+<SourceFile Checksum="08F30B1E18F71158DC80332BF0C2F735" Timestamp="1D3CFB8307BAC3A" xmlns="http://www.ni.com/PlatformFramework">
 	<SourceModelFeatureSet>
 		<ParsableNamespace AssemblyFileVersion="5.3.0.59009" FeatureSetName="LabVIEW Controls" Name="http://www.ni.com/Controls.LabVIEW.Design" OldestCompatibleVersion="5.2.0.49153" Version="5.2.0.49153" />
 		<ParsableNamespace AssemblyFileVersion="5.3.0.59009" FeatureSetName="LabVIEW Virtual Instrument" Name="http://www.ni.com/LabVIEW.VI" OldestCompatibleVersion="5.2.0.9" Version="5.2.0.49152" />
@@ -38,9 +38,7 @@
 			<ConnectorPaneTerminal Hotspot="25 40" />
 		</ConnectorPane>
 		<DiagramUnplacedItems Id="10" xmlns="http://www.ni.com/MocCommon" />
-		<FrontPanelUnplacedItems Id="11" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Fixed" Top="[float]0">
-			<HtmlNumericText BaseName="[string]Numeric" Height="[float]24" Id="41" InteractionMode="[NumericTextBoxInteractionModes]ReadOnly" Interval="[int]1" IsReadOnly="[bool]True" Left="[float]0" MinHeight="[float]24" Name="[string]webvihack_version" RadixBase="[RadixBase]Decimal" TabIndex="[int]0" Top="[float]0" Value="{DataItemBinding Id=40}" ValueFormatter="[string]Decimal, Uppercase, Signed" ValueType="[Type]Int32" Width="[float]72" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
-		</FrontPanelUnplacedItems>
+		<FrontPanelUnplacedItems Id="11" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Fixed" Top="[float]0" />
 		<BlockDiagram Id="12">
 			<Literal Bounds="395 345 40 15" DataType="Int32" Id="16" Label="17" xmlns="http://www.ni.com/MocCommon">
 				<p.Data>1</p.Data>
@@ -57,7 +55,10 @@
 			</NodeLabel>
 			<Wire Id="45" Joints="N(16:Out)|(435,350) N(43:Value)|(468,350)" xmlns="http://www.ni.com/PlatformFramework" />
 		</BlockDiagram>
-		<HtmlFrontPanel Height="[float]768" Id="15" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Fixed" Top="[float]0" Width="[float]1024" xmlns="http://www.ni.com/NationalInstruments.LabVIEW.HtmlVI" />
+		<HtmlFrontPanel Height="[float]768" Id="15" Left="[float]0" MinHeight="[float]0" MinWidth="[float]0" PanelSizeMode="Fixed" Top="[float]0" Width="[float]1024" xmlns="http://www.ni.com/NationalInstruments.LabVIEW.HtmlVI">
+			<HtmlNumericText BaseName="[string]Numeric" Height="[float]24" Id="41" InteractionMode="[NumericTextBoxInteractionModes]ReadOnly" Interval="[int]1" IsReadOnly="[bool]True" Label="[UIModel]46" Left="[float]516" MinHeight="[float]24" RadixBase="[RadixBase]Decimal" TabIndex="[int]0" Top="[float]228" Value="{DataItemBinding Id=40}" ValueFormatter="[string]Decimal, Uppercase, Signed" ValueType="[Type]Int32" Width="[float]72" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+			<HtmlLabel Height="[float]16" Id="46" LabelOwner="[UIModel]41" Left="[float]516" Text="[string]webvihack_version" Top="[float]208" Width="[float]105" xmlns="http://www.ni.com/Controls.LabVIEW.Design" />
+		</HtmlFrontPanel>
 		<DataItem AdaptToDiagramType="True" CallDirection="Output" CallIndex="0" DataType="Int32" Id="40" Name="webvihack_version" xmlns="http://www.ni.com/MocCommon">
 			<p.DefaultValue>1</p.DefaultValue>
 		</DataItem>
