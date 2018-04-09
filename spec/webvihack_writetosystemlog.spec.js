@@ -9,7 +9,7 @@ describe('Verifies the Write to System Log VI', function () {
             define(MyVI dv(VirtualInstrument (
                 Locals: c(
                     e(dv(.UInt32 0) handle)
-                    e('{"webvihack_version":1,"message":"Hello World!", "severity":0}' buffer)
+                    e('{"webvihack_version":2,"message":"Hello World!", "severity":0}' buffer)
                     e('' headers)
                     e('' body)
                     e(dv(.UInt32 0) statusCode)
