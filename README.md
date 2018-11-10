@@ -1,5 +1,7 @@
-# Work In Progress
-Not ready for general use
+# Abandonded
+
+With JSLI support in NXG 3.0 this repository is no longer relevant
+
 
 <!--
 ## Using in Edge
